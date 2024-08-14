@@ -83,29 +83,38 @@
             </div>
         </div>
     </div>
+
     <div id="container3" class="container3">
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="carousel-item" data-target="Trabajos/Collage Interactivo/collage.html">
-                    <img src="Collage.jpeg" alt="Vista previa página 1">
-                    <div class="carousel-caption">
-                    </div>
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <a href="Trabajos/Collage Interactivo/collage.html">
+                        <img src="Collage.jpeg" alt="Vista previa 1">
+                        <div class="carousel-overlay">
+                            <p>Collage interactivo</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="carousel-item" data-target="Trabajos/Collage Personal/collagePersonal.html">
-                    <img src="CollagePersonal.jpeg" alt="Vista previa página 2">
-                    <div class="carousel-caption">
-                    </div>
+                <div class="carousel-slide">
+                    <a href="Trabajos/Collage Personal/collagePersonal.html">
+                        <img src="CollagePersonal.jpeg" alt="Vista previa 2">
+                        <div class="carousel-overlay">
+                            <p>Collage Personal</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="carousel-item" data-target="pagina3.html">
-                    <img src="img3.jpg" alt="Vista previa página 3">
-                    <div class="carousel-caption">
-                    </div>
+                <div class="carousel-slide">
+                    <a href="pagina3.html">
+                        <img src="preview3.jpg" alt="Vista previa 3">
+                        <div class="carousel-overlay">
+                            <p>Página 3</p>
+                        </div>
+                    </a>
                 </div>
+                <!-- Más imágenes si es necesario -->
             </div>
-            <div class="carousel-controls">
-                <button class="prev">❮</button>
-                <button class="next">❯</button>
-            </div>
+            <button class="carousel-button prev">‹</button>
+            <button class="carousel-button next">›</button>
         </div>
     </div>
     <footer class="footer">
@@ -135,41 +144,36 @@
         }
     });
 
-    const carousel = document.querySelector('.carousel');
-    const items = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.prev');
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
     const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    const slideWidth = slides[0].getBoundingClientRect().width;
 
     let currentIndex = 0;
 
-    function updateCarousel() {
-        const offset = -currentIndex * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
+    function moveToSlide(track, currentIndex) {
+        track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
     }
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        moveToSlide(track, currentIndex);
+    });
 
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
         } else {
-            currentIndex = items.length - 1;
+            currentIndex = slides.length - 1;
         }
-        updateCarousel();
+        moveToSlide(track, currentIndex);
     });
 
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < items.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
-        }
-        updateCarousel();
-    });
-
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            window.location.href = item.dataset.target;
-        });
-    });
 
 </script>
 

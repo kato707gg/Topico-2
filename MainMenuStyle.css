@@ -55,6 +55,7 @@ body {
 .main-banner h1 {
     font-size: 5rem;
     font-weight: 600;
+    margin: 1rem;
 }
 
 .main-banner p {
@@ -72,13 +73,15 @@ body {
     overflow: hidden;
 }
 
-footer {
+footer, footer a {
     position: relative;
     z-index: 1;
     text-align: center;
     padding: 1em 0;
     background: rgba(0, 0, 0, 0.2); /* Fondo ligeramente opaco para distinguirlo del fondo animado */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .container1, .container2, .container3 {
@@ -122,60 +125,80 @@ footer {
     text-align: left; /* Alinea el texto a la izquierda */
 }
 
-.carousel-container {
+.carousel {
     padding-top: 5rem;
     position: relative;
-    max-width: 80%;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
     overflow: hidden;
 }
 
-.carousel {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-item {
-    min-width: 100%;
-    transition: transform 0.5s ease;
-    position: relative;
-    cursor: pointer;
-}
-
-.carousel-item img {
+.carousel-slide img {
     width: 100%;
-    border-radius: 15px;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
+    filter: brightness(0.7);
+    transition: filter 0.5s ease-in-out;
 }
 
-.carousel-item:hover img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
+.carousel-slide .carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 3rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    justify-content: center;
 }
 
-.carousel-controls {
+.carousel-slide:hover img {
+    filter: brightness(0.4);
+}
+
+.carousel-slide:hover .carousel-overlay {
+    opacity: 1;
+}
+
+.carousel-button {
     position: absolute;
     top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.carousel-controls button {
-    background-color: rgba(255, 255, 255, 0.2);
+    background: none; /* Sin fondo de color */
     border: none;
     color: white;
-    font-size: 2rem;
-    padding: 10px;
+    font-size: 4rem;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    z-index: 2;
+    padding: 10px;
+    transition: none; /* Sin animación */
 }
 
-.carousel-controls button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+.carousel-button.prev {
+    left: 10px;
 }
 
-.carousel-controls button:focus {
-    outline: none;
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    transform: none; /* Sin escalado al hacer hover */
+    background: none;
 }

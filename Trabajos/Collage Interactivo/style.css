@@ -11,27 +11,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    color: white;
-    padding: 2em;
-    text-align: center;
-    position: fixed; /* Fija el header en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Asegura que el header esté sobre otros elementos */
-}
-
-header h1 {
-    font-weight: 100;
-    margin: 0;
-    font-size: 4em;
-}
-
-body > .gallery {
-    margin-top: 80px; /* Ajusta el margen superior para evitar que el contenido quede oculto detrás del header */
-}
-
 .gallery {
     display: flex;
     flex-wrap: wrap;
