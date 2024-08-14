@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>No Time Limit Prop Firm</title>
+    <link rel="stylesheet" href="MainMenuStyle.css">
+</head>
+
+<body>
+    <div id="bg-wrap">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <radialGradient id="Gradient1" cx="50%" cy="50%" fx="0.441602%" fy="50%" r=".5">
+                    <animate attributeName="fx" dur="34s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+                    <stop offset="0%" stop-color="rgba(255, 255, 255, 1)"></stop>
+                    <stop offset="100%" stop-color="rgba(255, 255, 255, 0)"></stop>
+                </radialGradient>
+                <radialGradient id="Gradient2" cx="50%" cy="50%" fx="2.68147%" fy="50%" r=".5">
+                    <animate attributeName="fx" dur="23.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+                    <stop offset="0%" stop-color="rgba(200, 200, 200, 1)"></stop>
+                    <stop offset="100%" stop-color="rgba(200, 200, 200, 0)"></stop>
+                </radialGradient>
+                <radialGradient id="Gradient3" cx="50%" cy="50%" fx="0.836536%" fy="50%" r=".5">
+                    <animate attributeName="fx" dur="21.5s" values="0%;3%;0%" repeatCount="indefinite"></animate>
+                    <stop offset="0%" stop-color="rgba(100, 100, 100, 1)"></stop>
+                    <stop offset="100%" stop-color="rgba(100, 100, 100, 0)"></stop>
+                </radialGradient>
+            </defs>
+            <rect x="13.744%" y="1.18473%" width="100%" height="100%" fill="url(#Gradient1)"
+                transform="rotate(334.41 50 50)">
+                <animate attributeName="x" dur="20s" values="25%;0%;25%" repeatCount="indefinite"></animate>
+                <animate attributeName="y" dur="21s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="7s"
+                    repeatCount="indefinite"></animateTransform>
+            </rect>
+            <rect x="-2.17916%" y="35.4267%" width="100%" height="100%" fill="url(#Gradient2)"
+                transform="rotate(255.072 50 50)">
+                <animate attributeName="x" dur="23s" values="-25%;0%;-25%" repeatCount="indefinite"></animate>
+                <animate attributeName="y" dur="24s" values="0%;50%;0%" repeatCount="indefinite"></animate>
+                <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s"
+                    repeatCount="indefinite"></animateTransform>
+            </rect>
+            <rect x="9.00483%" y="14.5733%" width="100%" height="100%" fill="url(#Gradient3)"
+                transform="rotate(139.903 50 50)">
+                <animate attributeName="x" dur="25s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+                <animate attributeName="y" dur="12s" values="0%;25%;0%" repeatCount="indefinite"></animate>
+                <animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="9s"
+                    repeatCount="indefinite"></animateTransform>
+            </rect>
+        </svg>
+    </div>
+    <nav class="container-top">
+        <a id="Materia" href="MainMenuStyle.html">TÓPICO II</a>
+        <a href="#container1" class="log">Menu</a>
+        <a href="#container2" class="log">Información</a>
+        <a href="#container3" class="log">Trabajos</a>
+    </nav>
+
+    <div id="container1" class="container1">
+        <div class="main-banner">
+            <h1>Pagina personal de la materia</h1>
+            <p>Carpeta de evidencias</p>
+        </div>
+    </div>
+    <div id="container2" class="container2">
+        <div class="main-banner">
+            <h1>Información personal</h1>
+            <div class="info-row">
+                <div class="info-image">
+                    <img src="PORTRAIT.jpg" alt="Descripción de la imagen">
+                </div>
+                <div class="info-text">
+                    <p>Hola, soy Diego Hernández. Actualmente, estoy estudiando ingeniería de software y me encuentro a
+                        punto de iniciar mis prácticas profesionales. Mi pasión por la tecnología y la ingeniería de
+                        software nació de mi curiosidad y deseo de resolver problemas reales. Siempre he sido una
+                        persona observadora y comprometida, con una fuerte determinación para alcanzar mis metas. Esta
+                        actitud me ha llevado a enfrentar con perseverancia cada desafío académico y personal que se me
+                        ha presentado. Mi meta a largo plazo es contribuir significativamente a la sociedad, creando
+                        soluciones innovadoras que mejoren la calidad de vida de las personas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container3" class="container3">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-item" data-target="Trabajos/Collage Interactivo/collage.html">
+                    <img src="Collage.jpeg" alt="Vista previa página 1">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item" data-target="Trabajos/Collage Personal/collagePersonal.html">
+                    <img src="CollagePersonal.jpeg" alt="Vista previa página 2">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item" data-target="pagina3.html">
+                    <img src="img3.jpg" alt="Vista previa página 3">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <small>
+            <a href="#">Privacy Policy</a> •
+            <a href="#">Terms of Service</a>
+        </small>
+    </footer>
+</body>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const links = document.querySelectorAll('.container-top a');
+        links.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const sectionId = this.getAttribute('href').substring(1); // Obtiene el ID de la sección desde el atributo href
+                scrollToSection(sectionId);
+            });
+        });
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+
+    const carousel = document.querySelector('.carousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = items.length - 1;
+        }
+        updateCarousel();
+    });
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < items.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateCarousel();
+    });
+
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            window.location.href = item.dataset.target;
+        });
+    });
+
+</script>
+
+</html>

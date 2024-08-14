@@ -1,0 +1,181 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #0A0F0E;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container-top {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos entre el inicio y el final del contenedor */
+    align-items: center; /* Centra verticalmente los elementos */
+    position: fixed; /* Fija la barra de navegación en la parte superior */
+    width: 100%;
+    padding: 2vh 0;
+    background: rgba(255, 255, 255, 0.2); /* Fondo ligeramente opaco */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+#Materia {
+    margin-right: auto; /* Mueve TÓPICO II al extremo derecho */
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    padding-left: 1.2em;
+}
+
+.log {
+    color: white;
+    text-decoration: none;
+    margin-right: 3em;
+    font-size: 1.2rem;
+    font-weight: 200;
+    transition: 400ms;
+}
+
+.log:hover {
+    font-size: 1.3rem;
+}
+
+.main-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.main-banner h1 {
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.main-banner p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+#bg-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca la animación SVG detrás de todo el contenido */
+    overflow: hidden;
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 1em 0;
+    background: rgba(0, 0, 0, 0.2); /* Fondo ligeramente opaco para distinguirlo del fondo animado */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.container1, .container2, .container3 {
+    min-height: 100vh; /* Ocupa toda la altura de la ventana gráfica */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilo del info-row para alinear imagen y texto en fila */
+.info-row {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos dentro de la fila */
+    justify-content: center; /* Opcional: centra horizontalmente la fila en el contenedor */
+    gap: 2rem; /* Espacio entre imagen y texto */
+}
+
+/* Estilo de la imagen */
+.info-image {
+    flex: 0 0 auto; /* No permitir que la imagen crezca o se reduzca */
+    width: 30em; /* Ajusta el tamaño según tu preferencia */
+    height: 30em; /* Ajusta el tamaño según tu preferencia */
+    overflow: hidden;
+    border-radius: 50%; /* Hace que la imagen sea circular */
+}
+
+.info-image img {
+    width: 100%; /* Ajusta la imagen al contenedor */
+    height: 100%; /* Ajusta la imagen al contenedor */
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+}
+
+/* Estilo del texto descriptivo */
+.info-text {
+    flex: 1; /* Permite que el texto ocupe el espacio restante en la fila */
+    max-width: 600px; /* Limita el ancho máximo del texto para que no se extienda demasiado */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.carousel-container {
+    padding-top: 5rem;
+    position: relative;
+    max-width: 80%;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 15px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-controls button:focus {
+    outline: none;
+}
