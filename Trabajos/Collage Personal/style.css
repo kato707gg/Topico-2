@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #000000;
+    background-color: #d7dfd9;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -18,6 +18,7 @@ body {
     height: auto; /* Ajusta la altura según el contenido */
     margin: 0 auto; /* Centra el contenedor horizontalmente */
     padding: 20px 0; /* Añade espacio arriba y abajo del collage */
+    padding-top: 1rem;
 }
 
 .image-container {
@@ -47,7 +48,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
