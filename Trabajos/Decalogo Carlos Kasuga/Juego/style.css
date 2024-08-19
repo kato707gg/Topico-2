@@ -1,0 +1,139 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: "Poppins", sans-serif;
+ }
+ body {
+   background-color: #fff8fa;
+ }
+ .wrapper {
+   box-sizing: content-box;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   left: 50%;
+   top: 50%;
+ }
+ .game-container {
+   position: relative;
+   width: 100%;
+   display: grid;
+   gap: 0.6em;
+ }
+ .stats-container {
+   text-align: right;
+   margin-bottom: 1.2em;
+ }
+ .stats-container span {
+   font-weight: 600;
+ }
+ .card-content {
+   position: relative;
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   border-radius: 5px;
+ }
+ 
+ .card-text {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   color: #fff;
+   background-color: rgba(0, 0, 0, 0.5);
+   padding: 5px 10px;
+   border-radius: 5px;
+   font-size: 1.2em;
+ } 
+ .card-container {
+   position: relative;
+   width: 17vw;
+   height: 15vh;
+   cursor: pointer;
+ }
+ .card-container img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
+ .card-before,
+ .card-after {
+   position: absolute;
+   border-radius: 5px;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 4px solid #000000;
+   transition: transform 0.7s ease-out;
+   backface-visibility: hidden;
+ }
+ .card-before {
+   background-color: #ff6868;
+   font-size: 2.8em;
+   font-weight: 600;
+ }
+ .card-after {
+   background-color: #ffffff;
+   transform: rotateY(180deg);
+ }
+ .card-container.flipped .card-before {
+   transform: rotateY(180deg);
+ }
+ .card-container.flipped .card-after {
+   transform: rotateY(0deg);
+ }
+ .controls-container {
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+   background-color: #ffffff;
+   top: 0;
+ }
+ button {
+   border: none;
+   border-radius: 0.3em;
+   padding: 1em 1.5em;
+   cursor: pointer;
+ }
+ #stop {
+   font-size: 1.1em;
+   display: block;
+   margin: 1.1em auto 0 auto;
+   background-color: #000000;
+   color: #ffffff;
+ }
+ .controls-container button {
+   flex: 0 0 auto;
+   width: 22vw;
+   height: 22vw;
+   overflow: hidden;
+   border-radius: 50%;
+   font-size: 2em;
+   box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
+   color: white;
+   background-color: red;
+ }
+ .hide {
+   display: none;
+ }
+ #result {
+   text-align: center;
+ }
+ #result h2 {
+   font-size: 2.5em;
+ }
+ #result h4 {
+   font-size: 1.8em;
+   margin: 0.6em 0 1em 0;
+ }

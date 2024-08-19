@@ -1,133 +1,153 @@
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #0A0F0E;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.container-top {
-    display: flex;
-    justify-content: space-between; /* Distribuye los elementos entre el inicio y el final del contenedor */
-    align-items: center; /* Centra verticalmente los elementos */
-    position: fixed; /* Fija la barra de navegación en la parte superior */
-    width: 100%;
-    padding: 2vh 0;
-    background: rgba(0, 0, 0, 0.4); /* Fondo ligeramente opaco */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    z-index: 10;
-}
-
-#Materia {
-    width: 5%;
-    margin-left: 2em;
-    margin-right: auto;
-    color: white;
-    padding-left: 1.2em;
-}
-
-.log {
-    color: white;
-    text-decoration: none;
-    margin-right: 3em;
-    font-size: 1.3rem;
-    font-weight: 200;
-    transition: 400ms;
-}
-
-.log:hover {
-    font-size: 1.4rem;
-}
-
-.main-banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 2rem;
-    border-radius: 10px;
-    color: #ffffff;
-}
-
-.main-banner h1 {
-    font-size: 6rem;
-    font-weight: 100;
-    margin: 1rem;
-}
-
-.main-banner h2 {
-  font-size: 5rem;
-  font-weight: 100;
-  margin: 1rem;
-  margin-bottom: 4rem;
-}
-
-.main-banner h3 {
-  font-size: 2rem;
-  font-weight: 100;
-  margin: 1rem;
-}
-
-.main-banner p {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    font-weight: 100;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #0A0F0E;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #bg-wrap {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Coloca la animación SVG detrás de todo el contenido */
-    overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca la animación SVG detrás de todo el contenido */
+  overflow: hidden;
 }
 
+.container-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  padding: 2vh 0;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
 
+#Materia {
+  width: 5%;
+  margin-left: 2em;
+  margin-right: auto;
+  color: white;
+  padding-left: 1.2em;
+}
+
+.log {
+  color: white;
+  text-decoration: none;
+  margin-right: 3em;
+  font-size: 1.3rem;
+  font-weight: 200;
+  transition: 400ms;
+}
+
+.log:hover {
+  font-size: 1.4rem;
+}
+
+.main-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #ffffff;
+}
+
+.main-banner h1, .main-banner h2, .main-banner h3, .main-banner p {
+  font-weight: 100;
+  margin: 1rem;
+}
+
+.main-banner h1 {
+  font-size: 5vw;
+}
+
+.main-banner h2 {
+  font-size: 4vw;
+  margin-bottom: 2rem;
+}
+
+.main-banner h3 {
+  font-size: 2.5vw;
+}
+
+.main-banner p {
+  font-size: 1.4vw;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .main-banner h1 {
+      font-size: 8vw;
+  }
+
+  .main-banner h2 {
+      font-size: 6vw;
+      margin-bottom: 2rem;
+  }
+
+  .main-banner h3 {
+      font-size: 4vw;
+  }
+
+  .main-banner p {
+      font-size: 3vw;
+  }
+}
 
 .container1, .container2, .container3 {
-    min-height: 100vh; /* Ocupa toda la altura de la ventana gráfica */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    padding-top: 6.5rem;
-    box-sizing: border-box;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  padding-top: 6.5rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Estilo del info-row para alinear imagen y texto en fila */
 .info-row {
-    display: flex;
-    align-items: center; /* Centra verticalmente los elementos dentro de la fila */
-    justify-content: center; /* Opcional: centra horizontalmente la fila en el contenedor */
-    gap: 2rem; /* Espacio entre imagen y texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
-/* Estilo de la imagen */
 .info-image {
-    flex: 0 0 auto; /* No permitir que la imagen crezca o se reduzca */
-    width: 28em;
-    height: 28em;
-    overflow: hidden;
-    border-radius: 50%; /* Hace que la imagen sea circular */
+  flex: 0 0 auto;
+  width: 22vw;
+  height: 22vw;
+  overflow: hidden;
+  border-radius: 50%;
 }
 
 .info-image img {
-    width: 100%; /* Ajusta la imagen al contenedor */
-    height: 100%; /* Ajusta la imagen al contenedor */
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-/* Estilo del texto descriptivo */
 .info-text {
-    flex: 1; /* Permite que el texto ocupe el espacio restante en la fila */
-    max-width: 600px; /* Limita el ancho máximo del texto para que no se extienda demasiado */
-    text-align: left; /* Alinea el texto a la izquierda */
+  flex: 1;
+  max-width: 55%;
+  text-align: left;
+  font-size: 1.5vw;
 }
+
+@media (max-width: 768px) {
+  .info-text {
+      font-size: 3vw;
+  }
+}
+
 
 /* carousel slider */
   
@@ -337,20 +357,21 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    border-radius: 1.5rem;
   }
 
   .wgh-slider-item-figure__image {
     position: absolute;
     display: block;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     z-index: 1;
     opacity: 1;
-    border-radius: 1.5rem;
+    object-fit: cover;
   }
 
   .wgh-slider-item-figure__caption {
@@ -365,7 +386,6 @@ body {
     padding-top: 15rem;
     background-image: linear-gradient(0deg, #000 10%, transparent 100%);
     z-index: 2;
-    border-radius: 1.5rem;
   }
 
   .wgh-slider-item-figure__caption a {

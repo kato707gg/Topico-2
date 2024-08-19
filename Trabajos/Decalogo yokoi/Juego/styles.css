@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #252b2c;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+svg {
+    width: 25px;
+    height: 25px;
+    color: #eee;
+}
+
+header {
+    width: 95%;
+    margin: 1.1rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    grid-template-rows: 50px;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    justify-items: center;
+    background-color: transparent;
+}
+
+header .logo {
+    cursor: pointer;
+}
+
+.game-container {
+    text-align: center;
+    width: 50%;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.game-header h1 {
+    font-size: 2rem;
+    margin: 0.5rem;
+    color: #d4e2e4;
+}
+
+.game-header p {
+    font-size: 1rem;
+    color: #979797;
+}
+
+.word-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    COLOR: aliceblue;
+}
+
+.letters-container {
+    margin: 2rem 0;
+}
+
+.letters button {
+    display: inline-block;
+    background: #e4eff3e0;
+    color: #0a0a0a;
+    border: none;
+    margin: 0.2rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    box-shadow: 0 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+.letters button:hover {
+    background: #bfccd1;
+}
+
+.hangman-container {
+    margin: 2rem 0;
+}
+
+.status-container {
+    font-size: 2rem;
+    color: #cadddf;
+    margin: 1rem 1rem 2.5rem 1rem;
+}
+
+.controls {
+    margin-top: 1rem;
+}
+
+.controls button {
+    background: #d4e2e4;
+    color: #000;
+    border: none;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.controls button:hover {
+    background: #555;
+}
+
+canvas#hangman-canvas {
+    color: aliceblue;
+}
