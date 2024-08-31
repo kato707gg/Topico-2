@@ -7,6 +7,31 @@
  body {
    background-color: #fff8fa;
  }
+ svg {
+  width: 25px;
+  height: 25px;
+  color: #ff0000;
+}
+
+header {
+  width: 95%;
+  margin: 1.1rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 50px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  justify-items: center;
+  background-color: transparent;
+}
+
+header .back-arrow {
+  cursor: pointer;
+}
  .wrapper {
    box-sizing: content-box;
    position: absolute;
@@ -22,7 +47,7 @@
  }
  .stats-container {
    text-align: right;
-   margin-bottom: 1.2em;
+   margin-bottom: 0.5em;
  }
  .stats-container span {
    font-weight: 600;
@@ -37,7 +62,6 @@
    width: 100%;
    height: 100%;
    object-fit: cover;
-   border-radius: 5px;
  }
  
  .card-text {
@@ -52,7 +76,7 @@
  } 
  .card-container {
    position: relative;
-   width: 17vw;
+   width: 16vw;
    height: 15vh;
    cursor: pointer;
  }
@@ -107,7 +131,7 @@
    cursor: pointer;
  }
  #stop {
-   font-size: 1.1em;
+   font-size: 1em;
    display: block;
    margin: 1.1em auto 0 auto;
    background-color: #000000;

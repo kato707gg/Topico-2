@@ -37,7 +37,7 @@ header {
     background-color: transparent; /* Asegura que el header sea transparente */
 }
 
-header .logo, header .button-jugar, header .more-info {
+header .back-arrow, header .button-jugar, header .more-info {
     cursor: pointer;
 }
 
@@ -130,6 +130,7 @@ header .logo, header .button-jugar, header .more-info {
 }
 
 .slider .list .item .content h2 {
+    line-height: 1;
     font-size: 5vw;
     margin: 0;
 }
@@ -230,7 +231,7 @@ header .logo, header .button-jugar, header .more-info {
     border-radius: 10px;
 }
 .thumbnail .item.active{
-    filter: brightness(1.5);
+    filter: brightness(1);
 }
 .thumbnail .item .content {
     position: absolute;
