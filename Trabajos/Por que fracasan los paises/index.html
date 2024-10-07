@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interfaz con Sidebars Flotantes</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    </head>
+    <body>
+
+        <div class="container-top">
+            <a href="javascript:history.back()"><svg id="back-arrow" version="1.2" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512" width="512" height="512">
+                    <style>
+                        .s0 {
+                            fill: currentColor
+                        }
+                    </style>
+                    <path id="Path 0" class="s0"
+                        d="m341.4 33.2c-3.3 0.5-8.4 2-11.4 3.4-4.7 2.3-20.1 17.2-102.2 99.3-83.8 83.7-97.1 97.3-99.2 102.1-1.4 3-3.1 8.4-3.8 12-0.9 5-0.9 7.9 0 12.5 0.7 3.3 2.4 8.5 3.8 11.5 2.1 4.8 15.4 18.4 99.2 102.1 82.4 82.3 97.5 97 102.2 99.3 3 1.4 8.2 2.9 11.5 3.4 3.3 0.4 8.7 0.4 12 0 3.3-0.5 8.4-2 11.3-3.3 2.8-1.4 7.3-4.5 10-6.9 2.6-2.4 6.1-7 7.9-10.2 1.8-3.3 3.7-9 4.4-12.9 1-5.4 1-8.3 0.1-13-0.7-3.3-2.4-8.5-3.8-11.5-2.3-4.6-15.1-18-80.5-83.5-73.5-73.6-77.9-78.2-77.9-81.5 0-3.3 4.4-7.9 77.9-81.5 65.4-65.5 78.2-78.9 80.5-83.5 1.4-3 3.1-8.2 3.8-11.5 0.9-4.7 0.9-7.6-0.1-13-0.7-3.9-2.6-9.6-4.4-12.9-1.8-3.2-5.3-7.8-7.9-10.2-2.7-2.4-7.2-5.5-10-6.9-2.9-1.3-8.1-2.8-11.4-3.2-3.4-0.5-8.8-0.5-12-0.1z" />
+                </svg></a>
+            <div class="more-info">
+                <svg id="info-icon" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512"
+                    height="512">
+                    <style>
+                        .s0 {
+                            fill: currentColor
+                        }
+
+                        .s1 {
+                            fill: currentColor;
+                            stroke: currentColor;
+                            paint-order: stroke fill markers;
+                            stroke-linejoin: round;
+                            stroke-width: 8
+                        }
+                    </style>
+                    <path id="Path 0" class="s0"
+                        d="m273.7 87.5c-2.9 1.3-8.2 4.3-11.8 7.2-3.5 2.6-8.6 8.7-10.8 13.4-3.3 6.7-4.3 11.4-3.7 20.2 0.6 9.2 2 13.2 6.9 19.1 3.5 4.3 9.8 9.6 14.3 12.1 5.9 3 11.8 4.2 21.4 4.2 9.6 0 15.1-1.2 20.2-4 3.8-2.3 9.7-7.6 13.2-11.9 5.7-7.3 6.3-9.1 6.3-22.8 0-13.6-0.6-15.7-6.3-22.8-3.3-4.3-10.2-9.8-15.3-12.4q-8.9-4.5-19.1-4.3c-5.7 0-12.5 1-15.3 2zm-64.2 121.5l-22.4 7.7c-4.3 14.3-4.9 18.6-4.3 18.8 0.6 0.4 4.3-0.4 7.8-1.5 3.6-1.2 12.4-2 19.5-2 10 0 13.5 0.8 16.7 4.1 3.3 3.2 4.1 6.7 4.1 16.7 0 8.1-2.7 22.4-7.1 39.3-3.9 14.7-10 37.1-13.5 49.9-4.9 18.6-6.1 26.7-5.5 38.9 0.4 12.9 1.6 17 6.1 23.5 3.1 4.5 10.2 10.6 16.3 14 10 5.7 12.3 6.1 31.2 6.1 18.7 0 22-0.6 42.2-8.1l21.8-8.2c3.2-13.4 4.3-17.7 4.3-18.3 0-0.6-4.3 0.4-9.6 2-5.5 1.7-13.3 3.1-17.3 3.1-4.3 0-11-1.4-14.9-3.1-5.9-2.4-7.3-4.4-8.4-10.8-0.8-4-0.6-12.2 0-17.7 0.9-5.7 7-29.9 13.7-54 9.8-35 12.2-47 12.4-60.1 0.4-14.2-0.2-17.5-5.1-26.1-3.6-6.5-8.5-11.4-15.1-15-8.5-4.9-12.2-5.8-30.1-6.4-19.2-0.6-21.8-0.2-42.8 7.2z" />
+                    <path id="Path 0" fill-rule="evenodd" class="s1"
+                        d="m254.3 6c26.5-0.2 39.6 0.8 55 3.7 11.2 2.2 29.2 7.5 39.8 11.8 10.8 4.3 27.1 12.2 36.4 17.9 9.2 5.5 25.3 17.6 35.5 26.5 10.2 9 24.5 23.9 31.8 32.8 7.3 9.2 17.5 23.9 22.6 32.6 5.1 9 12.2 24.3 16.1 34.5 3.7 10.2 8.6 26.5 10.6 36.6 2.9 13.5 3.9 27.4 3.9 52 0 22.6-1 39.3-3.3 50.9-1.8 9.6-6.1 25.1-9.4 34.7-3.4 9.6-8.5 22-11.2 27.5-2.8 5.5-10.2 17.9-16.5 27.5-6.3 9.6-20.6 26.3-32 37.7-11.2 11.2-27.7 25.3-36.6 31.4-9 5.9-22.9 13.8-30.6 17.5-7.7 3.9-21.2 9.2-29.5 12-8.4 2.9-22.7 6.5-31.6 8.4-10.6 2-27.9 3-48.9 3-21 0-38.3-1-48.9-3-9-1.9-23.3-5.5-31.6-8.4-8.4-2.8-21.8-8.1-29.6-12-7.7-3.7-21.6-11.6-30.5-17.5-9-6.1-25.5-20.2-36.7-31.4-11.4-11.4-25.7-28.1-32-37.7-6.3-9.6-13.6-22-16.5-27.5-2.6-5.7-7.7-17.9-11.2-27.5-3.3-9.6-7.8-25.7-9.6-35.7-2.8-14.6-3.2-26.1-2.4-58 0.8-35.7 1.4-41.6 6.3-58.1 3-10.2 8.1-24.9 11.4-32.6 3.3-7.8 11.2-22.4 17.5-32.6 6.3-10.2 16.1-23.9 22-30.4 5.7-6.7 18.4-19.1 28.1-27.5 9.6-8.5 25.3-20 34.5-25.7 9.4-5.7 25.7-13.6 36.5-17.9 10.5-4.3 27.7-9.6 37.7-11.6 13-2.7 28.5-3.7 52.9-3.9zm-77.4 48.3c-9 3.5-23.4 10.8-32 16.1-8.5 5.5-21.8 14.9-29.1 21-7.6 6.1-17.6 15.9-22.4 21.4-4.7 5.7-13.9 18.3-20.2 28.5-6.3 10.2-14.3 25.3-17.5 33.6-3.1 8.4-7.4 21.2-9.4 28.6-3.1 10.8-3.9 20.5-3.7 51.9 0 32.8 0.6 41 4.3 54 2.2 8.4 7.1 22.2 10.6 30.6 3.5 8.3 12 24 18.9 34.6 7.2 10.6 18.8 25.3 26.1 32.6 7.4 7.4 19.2 17.6 26.5 22.8 7.4 5.1 20.6 13.1 29.6 17.6 8.9 4.7 22 10.2 29.1 12.4 6.9 2.4 19.8 5.7 28.3 7.3 8.8 1.7 26.9 3.1 40.4 3.1 13.4 0 31.5-1.4 40.3-3.1 8.6-1.6 21.4-4.9 28.3-7.3 7.2-2.2 20.2-7.7 29.2-12.4 8.9-4.5 22.2-12.5 29.5-17.6 7.4-5.2 19.2-15.4 26.5-22.8 7.3-7.3 19-22 26.1-32.6 6.9-10.6 15.5-26.3 18.9-34.6 3.5-8.4 8.2-22.2 10.4-30.6 2.9-10.8 4.5-24.4 5.1-45.8 0.8-23.7 0.2-34.7-2.4-48.9-1.9-10.2-6.1-25.7-9.4-34.7-3.3-8.9-10.4-24-16.1-33.6-5.7-9.6-15.3-23.2-21.4-30.5-5.9-7.4-16.9-18.4-24.4-24.5-7.4-6.1-20.6-15.5-29.2-21-8.5-5.3-24-12.8-34-16.7-10-3.9-26.1-8.3-35.7-10-10.4-2-27.7-3-43.8-3-16.1 0.2-33.2 1.6-43.8 3.6-9.6 2.1-24.6 6.6-33.6 10z" />
+                </svg>
+                <div class="info-popup">
+                    <p>Diego Hernandez Sánchez</p>
+                    <p>Diegoh707@outlook.com</p>
+                    <p>4424322665</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar left">
+            <button id="introBtn">Introducción</button>
+            <button id="teoriaBtn">La teoría de las instituciones inclusivas y extractivas</button>
+            <button id="destruccionBtn">La importancia de la destrucción creativa</button>
+            <button id="casosBtn">Casos históricos: éxito y fracaso institucional</button>
+        </div>
+        <div class="sidebar right">
+            <button id="persistenciaBtn">La persistencia de las instituciones extractivas</button>
+            <button id="chinaBtn">El crecimiento autoritario: El caso de China</button>
+            <button id="crisisBtn">Crisis institucionales y declive de naciones</button>
+            <button id="conclusionesBtn">Conclusiones: El futuro de las instituciones inclusivas</button>
+        </div>
+    
+        <div class="content">
+            <h1 class="titulo-libro">Por qué fracasan los países</h1>
+            <p class="subtitulo-libro">Los orígenes del poder, la prosperidad y la pobreza</p>
+        </div>
+    
+        <script>
+            const sidebars = document.querySelectorAll('.sidebar');
+            const content = document.querySelector('.content');
+    
+            // Muestra y oculta las sidebars según la posición del ratón
+            sidebars.forEach(sidebar => {
+                const activationZone = 20; // píxeles desde el borde
+    
+                document.addEventListener('mousemove', (e) => {
+                    const rect = sidebar.getBoundingClientRect();
+                    const isLeft = sidebar.classList.contains('left');
+                    const distance = isLeft ? e.clientX : window.innerWidth - e.clientX;
+    
+                    if (distance <= activationZone) {
+                        sidebar.classList.add('active');
+                    } else {
+                        sidebar.classList.remove('active');
+                    }
+                });
+            });
+    
+            // Función para crear las diapositivas
+            function showSlides(slidesData) {
+                let currentSlide = 0;
+    
+                // Limpiar el contenido anterior
+                content.innerHTML = '';
+    
+                // Crear contenedor de diapositivas
+                const slidesContainer = document.createElement('div');
+    
+                slidesData.forEach((slide, index) => {
+                    const slideElement = document.createElement('div');
+                    slideElement.classList.add('slide');
+                    if (index === 0) {
+                        slideElement.classList.add('active-slide');
+                    }
+    
+                    // Añadir contenido a la diapositiva
+                    slideElement.innerHTML = `
+                        <h1 class = 'h1-presentacion'>${slide.title}</h1>
+                        <p>${slide.content}</p>
+                        ${slide.image ? `<img src="${slide.image}" alt="${slide.title}">` : ''}
+                    `;
+    
+                    slidesContainer.appendChild(slideElement);
+                });
+    
+                content.appendChild(slidesContainer);
+    
+                // Crear botones de navegación
+                const navButtons = document.createElement('div');
+                navButtons.classList.add('navigation-buttons');
+    
+                const prevButton = document.createElement('button');
+                prevButton.textContent = '◀';
+                prevButton.addEventListener('click', () => {
+                    changeSlide(-1);
+                });
+    
+                const nextButton = document.createElement('button');
+                nextButton.textContent = '▶';
+                nextButton.addEventListener('click', () => {
+                    changeSlide(1);
+                });
+    
+                navButtons.appendChild(prevButton);
+                navButtons.appendChild(nextButton);
+    
+                content.appendChild(navButtons);
+    
+                function changeSlide(direction) {
+                    const slides = document.querySelectorAll('.slide');
+                    slides[currentSlide].classList.remove('active-slide');
+                    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                    slides[currentSlide].classList.add('active-slide');
+                }
+            }
+
+                 // Función para el botón "Introducción
+                document.getElementById('introBtn').addEventListener('click', () => {
+                content.innerHTML = `
+                    <h1>Introducción: La gran pregunta sobre el desarrollo</h1>
+                    <p>El éxito o fracaso de un país no se debe a factores geográficos, climáticos o culturales, 
+                    sino a las instituciones que regulan su política y su economía. Los autores Daron Acemoglu y James 
+                    Robinson explican que las instituciones inclusivas permiten que la mayoría de la población participe 
+                    en las decisiones políticas y económicas, fomentando así el crecimiento. En cambio, las instituciones 
+                    extractivas concentran el poder en manos de una élite, limitando el desarrollo. Un ejemplo de este 
+                    fenómeno se observa en la comparación entre Nogales (Arizona) y Nogales (Sonora), dos ciudades 
+                    divididas por una frontera, pero con economías y niveles de vida muy distintos. Esta diferencia, 
+                    afirman los autores, no se debe al clima, cultura o geografía, sino a las instituciones políticas 
+                    y económicas de cada lado de la frontera.</p>
+                `;
+            });
+    
+            // Función para el botón "La teoría de las instituciones inclusivas y extractivas"
+            document.getElementById('teoriaBtn').addEventListener('click', () => {
+                const slidesData = [
+                    {
+                        title: 'Instituciones Inclusivas',
+                        content: 'Permiten y fomentan la participación de la mayoría de la población en actividades económicas y políticas. Promueven la innovación y el desarrollo.',
+                        image: 'imagenes/inclusivas.png'
+                    },
+                    {
+                        title: 'Instituciones Extractivas',
+                        content: 'Concentran el poder y los recursos en manos de una élite. Limitan la participación y frenan el crecimiento económico sostenible.',
+                        image: 'imagenes/extractivas.png'
+                    },
+                    {
+                        title: 'Características de Instituciones Inclusivas',
+                        content: '<div class="container-ul"><ul style="list-style:none;"><li>• Derechos de propiedad seguros</li><li>• Sistema legal imparcial</li></ul><ul style="list-style:none;"><li>• Servicios públicos de calidad</li><li>• Libertad económica y de mercado</li></ul></div>',
+                        image: 'imagenes/caracteristicas_inclusivas.png'
+                    },
+                    {
+                        title: 'Características de Instituciones Extractivas',
+                        content: '<div class="container-ul"><ul style="list-style:none;"><li>• Poder centralizado</li><li>• Corrupción y nepotismo</li></ul><ul style="list-style:none;"><li>• Falta de derechos de propiedad</li><li>• Represión de la innovación</li></ul></div>',
+                        image: 'imagenes/caracteristicas_extractivas.png'
+                    },
+                    {
+                        title: 'Impacto en el Desarrollo',
+                        content: 'Las instituciones inclusivas generan prosperidad y bienestar generalizado. Las extractivas conducen al estancamiento y a la desigualdad.',
+                        image: 'imagenes/impacto_desarrollo.png'
+                    }
+                ];
+    
+                showSlides(slidesData);
+            });
+
+            // Función para el botón "La importancia de la destrucción creativa"
+            document.getElementById('destruccionBtn').addEventListener('click', () => {
+            content.innerHTML = `
+                <!-- Mapa mental -->
+                <div class="mapa-mental">
+                    <!-- Idea principal en el centro -->
+                    <div class="main-idea">
+                        <h1 class = 'h1-mapa-mental'>La importancia de la destrucción creativa</h1>
+                    </div>
+
+                    <!-- Subidea 1: Innovación -->
+                    <div class="sub-idea sub-idea-1">
+                        <p>Innovación</p>
+                        <img src="imagenes/practica.png" alt="Innovación">
+                        <div class="tooltip-destruccion">Impulsa la innovación reemplazando las tecnologías antiguas.</div>
+                    </div>
+
+                    <!-- Subidea 2: Progreso económico -->
+                    <div class="sub-idea sub-idea-2">
+                        <p>Progreso Económico</p>
+                        <img src="imagenes/crecimiento-profesional.png" alt="Progreso Económico">
+                        <div class="tooltip-destruccion">Nuevas industrias surgen reemplazando las antiguas.</div>
+                    </div>
+
+                    <!-- Subidea 3: Oportunidades -->
+                    <div class="sub-idea sub-idea-3">
+                        <p>Oportunidades</p>
+                        <img src="imagenes/aumento-de-beneficios.png" alt="Oportunidades">
+                        <div class="tooltip-destruccion">Crea oportunidades para emprendedores y trabajadores.</div>
+                    </div>
+
+                    <!-- Subidea 4: Competencia -->
+                    <div class="sub-idea sub-idea-4">
+                        <p>Competencia</p>
+                        <img src="imagenes/flechas-hacia-abajo-a-las-personas.png" alt="Competencia">
+                        <div class="tooltip-destruccion">Fomenta la competencia entre empresas.</div>
+                    </div>
+
+                    <!-- Subidea 5: Transformación Social -->
+                    <div class="sub-idea sub-idea-5">
+                        <p>Transformación Social</p>
+                        <img src="imagenes/globo.png" alt="Transformación Social">
+                        <div class="tooltip-destruccion">Los cambios tecnológicos transforman la sociedad.</div>
+                    </div>
+                </div>
+                `;
+            });
+
+            document.getElementById('casosBtn').addEventListener('click', () => {
+            content.innerHTML = `
+                <!-- Línea del tiempo -->
+                <h1 class = 'h1-presentacion' style="text-align: center;">Casos Históricos: Éxito y Fracaso Institucional</h1>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <!-- Evento 4: Egipto Antiguo -->
+                    <div class="timeline-event left">
+                        <p>2500 a.C.: Egipto Antiguo</p>
+                        <div class="tooltip-timeline">
+                            Egipto antiguo construyó una sociedad basada en instituciones extractivas, centralizando el poder en los faraones y utilizando trabajo esclavo para crear monumentos como las pirámides.
+                        </div>
+                    </div>                    
+                    <!-- Evento 2: Colonización de América Latina -->
+                    <div class="timeline-event right">
+                        <p>Siglo XVI: Colonización de América Latina</p>
+                        <div class="tooltip-timeline">
+                            Las instituciones extractivas implementadas por los colonizadores españoles y portugueses explotaron los recursos y a las poblaciones indígenas, lo que llevó a un subdesarrollo a largo plazo.
+                        </div>
+                    </div>
+                    <!-- Evento 1: Revolución Gloriosa -->
+                    <div class="timeline-event left">
+                        <p>1688: Revolución Gloriosa (Inglaterra)</p>
+                        <div class="tooltip-timeline">
+                            La Revolución Gloriosa estableció instituciones inclusivas en Inglaterra, como la monarquía constitucional, el parlamento y el estado de derecho.
+                        </div>
+                    </div>
+                    <!-- Evento 3: Independencia de los EE.UU. -->
+                    <div class="timeline-event right">
+                        <p>1776: Independencia de Estados Unidos</p>
+                        <div class="tooltip-timeline">
+                            Tras la independencia, Estados Unidos estableció instituciones inclusivas que fomentaron la libertad económica, política y de derechos de propiedad.
+                        </div>
+                    </div>
+                    <!-- Evento 6: Restauración Meiji -->
+                    <div class="timeline-event left">
+                        <p>1868: Restauración Meiji (Japón)</p>
+                        <div class="tooltip-timeline">
+                            La Restauración Meiji trajo instituciones más inclusivas a Japón, promoviendo la modernización, la industrialización y el crecimiento económico.
+                        </div>
+                    </div>
+                    <!-- Evento 5: Zimbabue bajo Mugabe -->
+                    <div class="timeline-event right">
+                        <p>1980s-2000s: Zimbabue bajo Mugabe</p>
+                        <div class="tooltip-timeline">
+                            Bajo el gobierno de Robert Mugabe, Zimbabue implementó instituciones extractivas que llevaron a la concentración de poder, el colapso económico y la represión política.
+                        </div>
+                    </div>
+
+                </div>
+            `;
+        });
+
+            document.getElementById('persistenciaBtn').addEventListener('click', () => {
+            content.innerHTML = `
+                <h1 class= 'h1-collage'>Casos históricos: éxito y fracaso institucional</h1>
+                <div class="collage">
+                    <div class="collage-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2619/2619989.png" alt="Innovación">
+                        <div class="tooltip-collage">Innovación</div>
+                    </div>
+                    <div class="collage-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1201/1201965.png" alt="Progreso Económico">
+                        <div class="tooltip-collage">Progreso Económico</div>
+                    </div>
+                    <div class="collage-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2619/2619989.png" alt="Innovación">
+                        <div class="tooltip-collage">Innovación</div>
+                    </div>
+                    <div class="collage-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1201/1201965.png" alt="Progreso Económico">
+                        <div class="tooltip-collage">Progreso Económico</div>
+                    </div>
+                    <div class="collage-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2619/2619989.png" alt="Innovación">
+                        <div class="tooltip-collage">Innovación</div>
+                    </div>
+                    <div class="collage-item">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1201/1201965.png" alt="Progreso Económico">
+                        <div class="tooltip-collage">Progreso Económico</div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Agrega más eventos para otros botones si lo deseas
+        </script>
+    </body>
+</html>
