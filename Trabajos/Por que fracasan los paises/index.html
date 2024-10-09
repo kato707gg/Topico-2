@@ -258,7 +258,7 @@
                     </div>                    
                     <!-- Evento 2: Colonización de América Latina -->
                     <div class="timeline-event right">
-                        <p>Siglo XVI: Colonización de América Latina</p>
+                        <p style ="margin-left:.5rem;">Siglo XVI: Colonización de América Latina</p>
                         <div class="tooltip-timeline">
                             Las instituciones extractivas implementadas por los colonizadores españoles y portugueses explotaron los recursos y a las poblaciones indígenas, lo que llevó a un subdesarrollo a largo plazo.
                         </div>
@@ -272,7 +272,7 @@
                     </div>
                     <!-- Evento 3: Independencia de los EE.UU. -->
                     <div class="timeline-event right">
-                        <p>1776: Independencia de Estados Unidos</p>
+                        <p style ="margin-left:.5rem;">1776: Independencia de Estados Unidos</p>
                         <div class="tooltip-timeline">
                             Tras la independencia, Estados Unidos estableció instituciones inclusivas que fomentaron la libertad económica, política y de derechos de propiedad.
                         </div>
@@ -286,7 +286,7 @@
                     </div>
                     <!-- Evento 5: Zimbabue bajo Mugabe -->
                     <div class="timeline-event right">
-                        <p>1980s-2000s: Zimbabue bajo Mugabe</p>
+                        <p style ="margin-left:.5rem;">1980s-2000s: Zimbabue bajo Mugabe</p>
                         <div class="tooltip-timeline">
                             Bajo el gobierno de Robert Mugabe, Zimbabue implementó instituciones extractivas que llevaron a la concentración de poder, el colapso económico y la represión política.
                         </div>
@@ -296,39 +296,259 @@
             `;
         });
 
-            document.getElementById('persistenciaBtn').addEventListener('click', () => {
-            content.innerHTML = `
+        document.getElementById('persistenciaBtn').addEventListener('click', () => {
+        content.innerHTML = `
                 <h1 class= 'h1-collage'>Casos históricos: éxito y fracaso institucional</h1>
                 <div class="collage">
                     <div class="collage-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2619/2619989.png" alt="Innovación">
-                        <div class="tooltip-collage">Innovación</div>
+                        <img src="imagenes/1.png" alt="1">
+                        <div class="tooltip-collage">Colonialismo en América Latina: Muestra cómo las instituciones extractivas implantadas por los colonizadores continuaron incluso después de la independencia, con las élites locales tomando el control.</div>
                     </div>
                     <div class="collage-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1201/1201965.png" alt="Progreso Económico">
-                        <div class="tooltip-collage">Progreso Económico</div>
+                        <img src="imagenes/2.png" alt="2">
+                        <div class="tooltip-collage">Apartheid en Sudáfrica: Representa un sistema institucionalizado que mantuvo a una élite en el poder a expensas de la mayoría de la población durante décadas.</div>
                     </div>
                     <div class="collage-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2619/2619989.png" alt="Innovación">
-                        <div class="tooltip-collage">Innovación</div>
+                        <img src="imagenes/3.jpg" alt="3">
+                        <div class="tooltip-collage">Régimen comunista en la Unión Soviética: Destaca cómo, bajo un sistema comunista, las instituciones extractivas concentraron el poder en la élite del partido, excluyendo a la mayoría de la población.</div>
                     </div>
                     <div class="collage-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1201/1201965.png" alt="Progreso Económico">
-                        <div class="tooltip-collage">Progreso Económico</div>
+                        <img src="imagenes/4.jpg" alt="4">
+                        <div class="tooltip-collage">Dictadura en Corea del Norte: Un ejemplo moderno de instituciones extractivas que perduran bajo una dinastía, donde el control absoluto sigue vigente en todos los aspectos de la vida.</div>
                     </div>
                     <div class="collage-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2619/2619989.png" alt="Innovación">
-                        <div class="tooltip-collage">Innovación</div>
+                        <img src="imagenes/5.png" alt="5">
+                        <div class="tooltip-collage">Zimbabue bajo Mugabe: Ilustra cómo las promesas de reforma se desvanecieron, y las instituciones extractivas bajo Mugabe condujeron al colapso económico y la represión política.</div>
                     </div>
                     <div class="collage-item">
-                        <img src="https://cdn-icons-png.flaticon.com/512/1201/1201965.png" alt="Progreso Económico">
-                        <div class="tooltip-collage">Progreso Económico</div>
+                        <img src="imagenes/6.jpg" alt="6">
+                        <div class="tooltip-collage">Egipto moderno: Un ejemplo de cómo las élites militares siguen controlando Egipto, incluso después de los intentos de cambio durante la Primavera Árabe, lo que refuerza la persistencia de las instituciones extractivas.</div>
                     </div>
                 </div>
             `;
         });
 
-        // Agrega más eventos para otros botones si lo deseas
+        document.getElementById('crisisBtn').addEventListener('click', () => {
+        content.innerHTML = `
+                <h1 class = 'h1-presentacion' style="text-align: center;">Crisis Institucionales y Declive de las Naciones</h1>
+                <table class="comparative-table">
+                    <thead>
+                        <tr>
+                            <th>Nación</th>
+                            <th>Causa de la Crisis</th>
+                            <th>Tipo de Instituciones</th>
+                            <th>Consecuencias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Imperio Romano</td>
+                            <td>
+                                <div class="tooltip-table">
+                                    Corrupción y concentración del poder en las élites.
+                                    <span class="tooltip-text">El poder se concentró en manos de unos pocos, mientras las provincias fueron explotadas, debilitando el imperio.</span>
+                                </div>
+                            </td>
+                            <td>Extractivas</td>
+                            <td>Colapso económico, división del Imperio, invasiones bárbaras.</td>
+                        </tr>
+                        <tr>
+                            <td>España Imperial</td>
+                            <td>
+                                <div class="tooltip-table">
+                                    Uso excesivo de recursos coloniales.
+                                    <span class="tooltip-text">España dependía de las riquezas de América Latina, creando un sistema extractivo y acumulando deudas internas.</span>
+                                </div>
+                            </td>
+                            <td>Extractivas</td>
+                            <td>Declive económico, guerra de sucesión y pérdida de influencia global.</td>
+                        </tr>
+                        <tr>
+                            <td>Imperio Otomano</td>
+                            <td>
+                                <div class="tooltip-table">
+                                    Corrupción, debilidad militar, y falta de innovación.
+                                    <span class="tooltip-text">Las élites otomanas evitaron reformas que podrían haber modernizado al imperio, mientras perdían territorios ante potencias europeas.</span>
+                                </div>
+                            </td>
+                            <td>Extractivas</td>
+                            <td>Pérdida de territorios, caída del Imperio tras la Primera Guerra Mundial.</td>
+                        </tr>
+                        <tr>
+                            <td>Rusia Zarista</td>
+                            <td>
+                                <div class="tooltip-table">
+                                    Desigualdad extrema y represión.
+                                    <span class="tooltip-text">La monarquía zarista mantuvo una sociedad feudal y reprimió cualquier intento de reforma, lo que culminó en la Revolución Rusa.</span>
+                                </div>
+                            </td>
+                            <td>Extractivas</td>
+                            <td>Revolución Rusa de 1917, establecimiento de la Unión Soviética.</td>
+                        </tr>
+                        <tr>
+                            <td>Francia Pre-Revolucionaria</td>
+                            <td>
+                                <div class="tooltip-table">
+                                    Desigualdad social, altos impuestos y malas cosechas.
+                                    <span class="tooltip-text">Las tensiones entre la monarquía, la nobleza y las clases bajas llevaron a la Revolución Francesa.</span>
+                                </div>
+                            </td>
+                            <td>Extractivas</td>
+                            <td>Revolución Francesa, caída de la monarquía y un período de inestabilidad política.</td>
+                        </tr>
+                        <tr>
+                            <td>Zimbabue bajo Mugabe</td>
+                            <td>
+                                <div class="tooltip-table">
+                                    Corrupción y concentración de poder en una élite.
+                                    <span class="tooltip-text">El gobierno de Mugabe mantuvo el control absoluto, lo que llevó al colapso económico y a una crisis humanitaria.</span>
+                                </div>
+                            </td>
+                            <td>Extractivas</td>
+                            <td>Colapso económico, hiperinflación y pobreza masiva.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+        });
+
+        document.getElementById('chinaBtn').addEventListener('click', () => {
+        content.innerHTML = `
+                <h1 class = 'h1-simulador'>Simulación de decisiones económicas en un régimen autoritario</h1>
+                <!-- Indicadores de la simulación -->
+                <div class="indicators">
+                    <div class="indicator" id="indicator-pib">
+                        <strong>PIB: </strong> <span id="pib">100%</span>
+                    </div>
+                    <div class="indicator" id="indicator-satisfaccion">
+                        <strong>Satisfacción: </strong> <span id="satisfaccion">75%</span>
+                    </div>
+                    <div class="indicator" id="indicator-represion">
+                        <strong>Represión: </strong> <span id="represion">30%</span>
+                    </div>
+                </div>
+
+                <!-- Indicador de estabilidad general -->
+                <h3>Estabilidad General</h3>
+                <div class="general-stability">
+                    <div class="general-stability-bar" id="stability-bar"></div>
+                </div>
+
+                <!-- Opciones de decisiones -->
+                <div class="decisions">
+                    <button class='boton-simulacion' onclick="decision1()">Invertir en infraestructura masiva</button>
+                    <p class="decision-count">Veces que se ha tomado esta decisión: <span id="count1">0</span></p>
+
+                    <button class='boton-simulacion' onclick="decision2()">Aumentar la censura de medios de comunicación</button>
+                    <p class="decision-count">Veces que se ha tomado esta decisión: <span id="count2">0</span></p>
+
+                    <button class='boton-simulacion' onclick="decision3()">Reformar leyes laborales para atraer inversión extranjera</button>
+                    <p class="decision-count">Veces que se ha tomado esta decisión: <span id="count3">0</span></p>
+
+                    <button class='boton-simulacion' onclick="decision4()">Reprimir manifestaciones y huelgas laborales</button>
+                    <p class="decision-count">Veces que se ha tomado esta decisión: <span id="count4">0</span></p>
+
+                    <button class='boton-simulacion' onclick="decision5()">Aumentar el gasto en educación y tecnología</button>
+                    <p class="decision-count">Veces que se ha tomado esta decisión: <span id="count5">0</span></p>
+                </div>
+                <div id="alert" class="alert"></div>
+            `;
+        });
+
+        let pib = 100;
+        let satisfaccion = 75;
+        let represion = 30;
+        let count1 = 0, count2 = 0, count3 = 0, count4 = 0, count5 = 0;
+
+        // Función para actualizar los indicadores
+        function actualizarIndicadores() {
+            document.getElementById('pib').innerText = pib + '%';
+            document.getElementById('satisfaccion').innerText = satisfaccion + '%';
+            document.getElementById('represion').innerText = represion + '%';
+
+            // Actualizar estabilidad general (promedio entre los tres indicadores)
+            const estabilidadGeneral = (pib + satisfaccion - represion) / 3;
+            document.getElementById('stability-bar').style.width = `${Math.max(0, Math.min(estabilidadGeneral, 100))}%`;
+
+            // Cambiar colores según los valores
+            cambiarColor('indicator-pib', pib);
+            cambiarColor('indicator-satisfaccion', satisfaccion);
+            cambiarColor('indicator-represion', represion);
+        }
+
+        // Función para cambiar el color de los indicadores
+        function cambiarColor(indicador, valor) {
+            const element = document.getElementById(indicador);
+            if (valor >= 80) {
+                element.className = 'indicator green';
+            } else if (valor >= 60) {
+                element.className = 'indicator yellow';
+            } else if (valor >= 40) {
+                element.className = 'indicator orange';
+            } else {
+                element.className = 'indicator red';
+            }
+        }
+
+        // Funciones que simulan las decisiones y sus efectos
+        function decision1() {
+            pib += 10;
+            satisfaccion -= 5;
+            represion += 10;
+            count1 += 1; // Aumentar el contador
+            document.getElementById('count1').innerText = count1; // Actualizar el contador en el DOM
+            actualizarIndicadores();
+            alert("Has invertido en infraestructura masiva. El PIB ha crecido, pero la represión también ha aumentado.");
+        }
+
+        function decision2() {
+            pib += 5;
+            satisfaccion -= 10;
+            represion += 15;
+            count2 += 1;
+            document.getElementById('count2').innerText = count2;
+            actualizarIndicadores();
+            alert("Has aumentado la censura de los medios. El control sobre la población aumenta, pero la satisfacción disminuye.");
+        }
+
+        function decision3() {
+            pib += 15;
+            satisfaccion -= 5;
+            represion += 5;
+            count3 += 1;
+            document.getElementById('count3').innerText = count3;
+            actualizarIndicadores();
+            alert("Has reformado las leyes laborales para atraer inversión extranjera. El PIB crece, pero las libertades laborales se ven afectadas.");
+        }
+
+        function decision4() {
+            pib += 3;
+            satisfaccion -= 20;
+            represion += 20;
+            count4 += 1;
+            document.getElementById('count4').innerText = count4;
+            actualizarIndicadores();
+            alert("Has reprimido manifestaciones y huelgas laborales. La represión aumenta significativamente.");
+        }
+
+        function decision5() {
+            pib += 20;
+            satisfaccion += 10;
+            represion += 3;
+            count5 += 1;
+            document.getElementById('count5').innerText = count5;
+            actualizarIndicadores();
+            alert("Has aumentado el gasto en educación y tecnología. El PIB y la satisfacción de la población aumentan.");
+        }
+
+        document.getElementById('conclusionesBtn').addEventListener('click', () => {
+        content.innerHTML = `
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yzJBFrXClts" frameborder="0" allowfullscreen></iframe>
+                </div>
+            `;
+        });
+
         </script>
     </body>
 </html>
