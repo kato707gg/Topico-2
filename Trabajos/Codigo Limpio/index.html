@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Refactorización de Código</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e8efff;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 60%;
+            height: 70%;
+            align-content: center;
+        }
+
+        .container-codigo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        pre {
+            margin: 5rem 0;
+            background-color: #f0f0f0;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: left;
+            font-size: x-large;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            transition: background-color 0.5s ease;
+        }
+
+        #hintButton {
+            font-size: 1rem;
+            margin-left: 2rem;
+            background-color: #ffae00;
+        }
+
+        .tooltip {
+            display: none;
+            margin-left: 2rem;
+            position: absolute;
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            border-radius: 0.4rem;
+            font-size: 1rem;
+            width: 15%;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 1rem;
+            margin: .5rem;
+            border: none;
+            border-radius: .5rem;
+            background-color: #0d7899;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0b576e;
+        }
+
+        .result {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        #nextLevelButton {
+            margin: auto;
+            display: none;
+            margin-top: 2rem;
+            background-color: #28a745;
+        }
+
+        @media screen and (max-width: 1600px) {
+            .container {
+                width: 70%;
+                height: 80%;
+            }
+
+            pre {
+                margin: 2rem 0;
+            }
+        }
+
+        .correcto {
+            background-color: #d4edda !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Refactorización de Código</h1>
+        <h2> Nivel <span id="level">1</span></h2>
+
+        <div class="container-codigo">
+            <pre id="codeBlock"></pre>
+            <div class="pista" id="pista">
+                <button id="hintButton" onclick="showHint()">Solicitar pista</button>
+                <span class="tooltip" id="tooltip"></span>
+            </div>
+        </div>
+
+        <h3 id="instruccion">Elige la mejor refactorización:</h3>
+        <div id="options">
+            <!-- Opciones se cargan dinámicamente -->
+        </div>
+
+        <div class="result" id="result"></div>
+        <div class="book-excerpt" id="bookExcerpt"></div>
+        <button id="nextLevelButton" onclick="nextLevel()">Siguiente nivel</button>
+    </div>
+
+    <script>
+        let levels = [
+            {
+                code: `
+function calc(num){
+    var a = num + 1;
+    var b = num * 2;
+    return a + b;
+}
+                `,
+                options: [
+                    "Renombrar 'num' a 'inputNumber'",
+                    "Renombrar 'a' a 'incrementValue'",
+                    "Fusionar 'a' y 'b' en una sola variable"
+                ],
+                correctAnswer: 2,
+                refactor: `
+function calc(inputNumber){
+    var incrementValue = inputNumber + 1;
+    var result = inputNumber * 2;
+    return incrementValue + result;
+}
+                `,
+                hint: "Pista: Usa nombres más descriptivos para que el código sea más claro.",
+                bookExcerpt: "En 'Código Limpio', se recomienda usar nombres que expresen claramente su propósito para mejorar la legibilidad."
+            },
+            {
+                code: `
+function calc(num){
+    if (num > 10) {
+        return num * 2;
+    } else {
+        return num * 2 + 1;
+    }
+}
+                `,
+                options: [
+                    "Reemplazar el 'if' con un ternario",
+                    "Usar una variable para el valor común",
+                    "Eliminar el bloque 'else'"
+                ],
+                correctAnswer: 2,
+                refactor: `
+function calc(num){
+    var result = num * 2;
+    return num > 10 ? result : result + 1;
+}
+                `,
+                hint: "Pista: Observa si hay código duplicado entre ambas ramas del if.",
+                bookExcerpt: "Reducir duplicación es clave en 'Código Limpio' para simplificar el código y evitar errores futuros."
+            },
+            {
+                code: `
+function findMax(arr){
+    var max = arr[0];
+    for (var i = 1; i < arr.length; i++){
+        if (arr[i] > max){
+            max = arr[i];
+        }
+    }
+    return max;
+}
+    `,
+                options: [
+                    "Cambiar el bucle 'for' a un bucle 'while'",
+                    "Usar el método 'Math.max' con el operador 'spread'",
+                    "Eliminar la declaración de 'max'"
+                ],
+                correctAnswer: 2,
+                refactor: `
+function findMax(arr){
+    return Math.max(...arr);
+}
+    `,
+                hint: "Pista: Considera un enfoque más directo utilizando una función de utilidad de JavaScript.",
+                bookExcerpt: "Refactorizar funciones a métodos nativos o utilitarios puede simplificar mucho el código, tal como se menciona en 'Código Limpio'."
+            },
+            {
+                code: `
+function sum(arr){
+    var total = 0;
+    for (var i = 0; i < arr.length; i++){
+        total += arr[i];
+    }
+    return total;
+}
+    `,
+                options: [
+                    "Reemplazar el bucle 'for' con un bucle 'while'",
+                    "Usar 'reduce' en lugar de un bucle 'for'",
+                    "Declarar 'total' como una constante"
+                ],
+                correctAnswer: 2,
+                refactor: `
+function sum(arr){
+    return arr.reduce((acc, curr) => acc + curr, 0);
+}
+    `,
+                hint: "Pista: JavaScript tiene un método que te permite combinar todos los valores de un array.",
+                bookExcerpt: "Cuando puedas, utiliza métodos funcionales como 'reduce' para reemplazar los bucles tradicionales, como se recomienda en 'Código Limpio'."
+            },
+            {
+                code: `
+function isEven(num){
+    if (num % 2 === 0){
+        return true;
+    } else {
+        return false;
+    }
+}
+    `,
+                options: [
+                    "Eliminar el bloque 'else'",
+                    "Simplificar la expresión 'if' a una sola línea",
+                    "Usar el operador ternario"
+                ],
+                correctAnswer: 1,
+                refactor: `
+function isEven(num){
+    return num % 2 === 0;
+}
+    `,
+                hint: "Pista: Elimina código innecesario para simplificar la función.",
+                bookExcerpt: "El código innecesario puede crear confusión y aumentar el tiempo de lectura. Como se menciona en 'Código Limpio', simplifica siempre que sea posible."
+            }
+
+        ];
+
+        let currentLevel = 0;
+        let correctAnswersFirstTry = 0;
+        let timer;
+        let isHintAvailable = false;
+        let firstAttempt = true;
+
+        function loadLevel() {
+            const level = levels[currentLevel];
+            document.getElementById('codeBlock').innerText = level.code;
+            document.getElementById('codeBlock').classList.remove('correcto');
+            document.getElementById('options').style.display = 'block';
+            document.getElementById('result').innerText = '';
+            document.getElementById('bookExcerpt').innerText = '';
+            document.getElementById('pista').style.display = 'none';
+            document.getElementById('nextLevelButton').style.display = 'none';
+            document.getElementById('level').innerText = currentLevel + 1;
+            isHintAvailable = false;
+            firstAttempt = true;
+
+            const optionsDiv = document.getElementById('options');
+            optionsDiv.innerHTML = '';
+            level.options.forEach((option, index) => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.onclick = () => checkAnswer(index + 1);
+                optionsDiv.appendChild(button);
+            });
+
+            startTimer();
+        }
+
+        function checkAnswer(selected) {
+            clearTimeout(timer);
+            const level = levels[currentLevel];
+
+            if (level.correctAnswer === selected) {
+                if (firstAttempt) correctAnswersFirstTry++;
+                document.getElementById('instruccion').innerText = '';
+                document.getElementById('options').style.display = 'none';
+                document.getElementById('pista').style.display = 'none';
+                document.getElementById('result').innerText = "¡Correcto!";
+                document.getElementById('bookExcerpt').innerText = level.bookExcerpt;
+                document.getElementById('codeBlock').innerText = level.refactor;
+                document.getElementById('codeBlock').classList.add('correcto');
+                document.getElementById('nextLevelButton').style.display = 'block';
+            } else {
+                document.getElementById('result').innerText = "Inténtalo de nuevo.";
+                firstAttempt = false;
+                setTimeout(() => {
+                    document.getElementById('result').innerText = '';
+                }, 2000);
+            }
+        }
+
+        function showHint() {
+            const level = levels[currentLevel];
+            document.getElementById('tooltip').innerText = level.hint;
+            document.getElementById('tooltip').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('tooltip').style.display = 'none';
+            }, 5000);
+        }
+
+        function nextLevel() {
+            currentLevel++;
+            if (currentLevel < levels.length) {
+                loadLevel();
+            } else {
+                document.getElementById('codeBlock').innerText = `¡Felicitaciones! Has completado todos los niveles. Aciertos en el primer intento: ${correctAnswersFirstTry}/${levels.length}`;
+                document.getElementById('codeBlock').classList.remove('correcto');
+                document.getElementById('codeBlock').style.backgroundColor = 'white';
+                document.getElementById('instruccion').innerText = '';
+                document.getElementById('result').innerText = '';
+                document.getElementById('bookExcerpt').innerText = '';
+                document.getElementById('options').style.display = 'none';
+                document.getElementById('nextLevelButton').style.display = 'none';
+            }
+        }
+
+        function startTimer() {
+            timer = setTimeout(() => {
+                if (!isHintAvailable) {
+                    document.getElementById('pista').style.display = 'block';
+                    isHintAvailable = true;
+                }
+            }, 5000);
+        }
+
+        window.onload = loadLevel;
+    </script>
+</body>
+
+</html>
