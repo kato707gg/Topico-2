@@ -211,6 +211,7 @@ body {
   .wgh-slider-target:first-of-type:last-of-type ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__trigger {
     display: none;
   }
+  
   .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider__container {
     transform: translateX(0%);
   }
@@ -246,15 +247,6 @@ body {
   }
   .wgh-slider-target:nth-of-type(12):checked ~ .wgh-slider__viewport .wgh-slider__container {
     transform: translateX(-550%);
-  }
-  .wgh-slider-target:nth-of-type(13):checked ~ .wgh-slider__viewport .wgh-slider__container {
-    transform: translateX(-600%);
-  }
-  .wgh-slider-target:nth-of-type(14):checked ~ .wgh-slider__viewport .wgh-slider__container {
-    transform: translateX(-650%);
-  }
-  .wgh-slider-target:nth-of-type(15):checked ~ .wgh-slider__viewport .wgh-slider__container {
-    transform: translateX(-700%);
   }
   
   .wgh-slider-item {
@@ -305,15 +297,6 @@ body {
   .wgh-slider-item:nth-child(12) {
     left: 550%;
   }
-  .wgh-slider-item:nth-child(13) {
-    left: 600%;
-  }
-  .wgh-slider-item:nth-child(14) {
-    left: 650%;
-  }
-  .wgh-slider-item:nth-child(15) {
-    left: 700%;
-  }
 
   .wgh-slider-item__trigger {
     display: block;
@@ -326,15 +309,18 @@ body {
     cursor: pointer;
   }
 
-  .wgh-slider-target:nth-of-type(14):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(14) .wgh-slider-item__trigger, 
-  .wgh-slider-target:nth-of-type(13):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(13) .wgh-slider-item__trigger, 
   .wgh-slider-target:nth-of-type(12):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(12) .wgh-slider-item__trigger, 
   .wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) .wgh-slider-item__trigger, 
   .wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) .wgh-slider-item__trigger, 
   .wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) .wgh-slider-item__trigger, 
   .wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) .wgh-slider-item__trigger, 
   .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) .wgh-slider-item__trigger, 
-  .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) .wgh-slider-item__trigger, .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__trigger {
+  .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) .wgh-slider-item__trigger, 
+  .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) .wgh-slider-item__trigger, 
+  .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) .wgh-slider-item__trigger, 
+  .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) .wgh-slider-item__trigger, 
+  .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) .wgh-slider-item__trigger, 
+  .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__trigger {
     display: none;
   }
 
@@ -394,33 +380,62 @@ body {
       transition-delay: 0.6s;
   }
   .wgh-slider-target:nth-of-type(12):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(12) .wgh-slider-item__inner::before,
-.wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) .wgh-slider-item__inner::before,
-.wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) .wgh-slider-item__inner::before,
-.wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) .wgh-slider-item__inner::before,.wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__inner::before {
+  .wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__inner::before {
     transform: translate(0, 24px);
   }
 
   .wgh-slider-target:nth-of-type(12):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(12) .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__inner::after {
+  .wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) .wgh-slider-item__inner::after,
+  .wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) .wgh-slider-item__inner::after,
+  .wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) .wgh-slider-item__inner::after,
+  .wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) .wgh-slider-item__inner::after {
     background-position: -50% 0%;
   }
 
   .wgh-slider-target:nth-of-type(12):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(12) ~ .wgh-slider-item .wgh-slider-item__inner::before,
-.wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) ~ .wgh-slider-item .wgh-slider-item__inner::before,
-.wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) ~ .wgh-slider-item .wgh-slider-item__inner::before,
-.wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) ~ .wgh-slider-item .wgh-slider-item__inner::before,
-.wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) ~ .wgh-slider-item .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) ~ .wgh-slider-item .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) ~ .wgh-slider-item .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) ~ .wgh-slider-item .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) ~ .wgh-slider-item .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) ~ .wgh-slider-item .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) ~ .wgh-slider-item .wgh-slider-item__inner::before, .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) ~ .wgh-slider-item .wgh-slider-item__inner::before {
+  .wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) ~ .wgh-slider-item .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) ~ .wgh-slider-item .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) ~ .wgh-slider-item .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) ~ .wgh-slider-item .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) ~ .wgh-slider-item .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) ~ .wgh-slider-item .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) ~ .wgh-slider-item .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) ~ .wgh-slider-item .wgh-slider-item__inner::before,
+  .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) ~ .wgh-slider-item .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) ~ .wgh-slider-item .wgh-slider-item__inner::before, 
+  .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) ~ .wgh-slider-item .wgh-slider-item__inner::before {
     transform: translate(24px, 12px);
   }
 
   .wgh-slider-target:nth-of-type(12):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(12) ~ .wgh-slider-item .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) ~ .wgh-slider-item .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) ~ .wgh-slider-item .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) ~ .wgh-slider-item .wgh-slider-item__inner::after,
-.wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) ~ .wgh-slider-item .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) ~ .wgh-slider-item .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) ~ .wgh-slider-item .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) ~ .wgh-slider-item .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) ~ .wgh-slider-item .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) ~ .wgh-slider-item .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) ~ .wgh-slider-item .wgh-slider-item__inner::after, .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) ~ .wgh-slider-item .wgh-slider-item__inner::after {
+  .wgh-slider-target:nth-of-type(11):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(11) ~ .wgh-slider-item .wgh-slider-item__inner::after,
+  .wgh-slider-target:nth-of-type(10):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(10) ~ .wgh-slider-item .wgh-slider-item__inner::after,
+  .wgh-slider-target:nth-of-type(9):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(9) ~ .wgh-slider-item .wgh-slider-item__inner::after,
+  .wgh-slider-target:nth-of-type(8):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(8) ~ .wgh-slider-item .wgh-slider-item__inner::after,
+  .wgh-slider-target:nth-of-type(7):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(7) ~ .wgh-slider-item .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(6):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(6) ~ .wgh-slider-item .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(5):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(5) ~ .wgh-slider-item .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(4):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(4) ~ .wgh-slider-item .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(3):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(3) ~ .wgh-slider-item .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(2):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(2) ~ .wgh-slider-item .wgh-slider-item__inner::after, 
+  .wgh-slider-target:nth-of-type(1):checked ~ .wgh-slider__viewport .wgh-slider-item:nth-child(1) ~ .wgh-slider-item .wgh-slider-item__inner::after {
     background-position: -100% 0%;
   }
   
