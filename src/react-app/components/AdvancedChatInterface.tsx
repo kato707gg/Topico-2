@@ -29,7 +29,7 @@ type Slide = {
   image?: string;
 };
 
-const RECIPE_PROMPT = "Eres un asistente especializado en recetas de cocina. Proporciona recetas detalladas, saludables y fáciles de seguir. No uses asteriscos en tus respuestas. Para listas, usa guiones (-) al inicio de cada elemento. Asegúrate de incluir saltos de línea entre secciones para mejorar la legibilidad.";
+const RECIPE_PROMPT = "Eres un asistente especializado en recetas de cocina. Proporciona recetas detalladas, saludables y fáciles de seguir. No uses asteriscos en tus respuestas. Para listas, usa guiones (-) al inicio de cada elemento. Asegúrate de incluir saltos de línea entre secciones para mejorar la legibilidad. Si te preguntan cualquier cosa que no sea una receta, tienes que contestar siempre con el mensaje 'Lo siento, pero no puedo ayudarte con eso. Mi especialidad es proporcionar recetas de cocina saludables y fáciles de seguir. ¿Te gustaría que te proporcione una receta?'.";
 
 const V0_SLIDES: Slide[] = [
   {
@@ -71,7 +71,7 @@ const Modal = ({ show, onClose, children }: { show: boolean; onClose: () => void
   if (!show) return null;
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white p-6 rounded-lg max-w-4xl w-full">
+      <div className="bg-white p-6 rounded-lg max-w-3xl w-full">
         <button onClick={onClose} className="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
           <X size={20} />
         </button>
@@ -102,16 +102,10 @@ export default function RecipeChatInterface() {
   useEffect(scrollToBottom, [conversations]);
 
   const cleanResponse = (text: string) => {
-    // Reemplazar asteriscos con guiones para listas
     let cleanedText = text.replace(/\*/g, '-');
-    
-    // Asegurar saltos de línea entre secciones
     cleanedText = cleanedText.replace(/\n{2,}/g, '\n\n');
-    
-    // Convertir listas con guiones a HTML para mejor formato
     cleanedText = cleanedText.replace(/- (.*)/g, '<li>$1</li>');
     cleanedText = cleanedText.replace(/<li>.*?<\/li>/gs, match => `<ul>${match}</ul>`);
-    
     return cleanedText;
   };
 
@@ -134,7 +128,6 @@ export default function RecipeChatInterface() {
         const response = await result.response;
         let text = response.text();
 
-        // Limpiar y formatear la respuesta
         text = cleanResponse(text);
 
         const botMessage: Message = {
@@ -184,9 +177,16 @@ export default function RecipeChatInterface() {
 
   const renderSlide = (slide: Slide) => (
     <div className="text-center">
-      <h2 className="text-4xl font-bold mb-4">{slide.title}</h2>
-      {slide.image && <img src={slide.image} alt={slide.title} className="mx-auto mb-4 rounded-lg shadow-lg" />}
-      <p className="text-xl">{slide.content}</p>
+      <h2 className="text-3xl font-bold mb-4">{slide.title}</h2>
+      {slide.image && (
+        <img 
+          src={slide.image} 
+          alt={slide.title} 
+          className="mx-auto mb-4 rounded-lg shadow-lg max-w-full h-auto" 
+          style={{ maxHeight: '300px', objectFit: 'contain' }}
+        />
+      )}
+      <p className="text-lg">{slide.content}</p>
     </div>
   );
 
@@ -289,14 +289,13 @@ export default function RecipeChatInterface() {
         <div className="relative">
           <button
             onClick={() => setShowV0Modal(false)}
-            
             className="absolute top-0 right-0 text-gray-500 hover:text-gray-700"
             aria-label="Close"
           >
             <X size={24} />
           </button>
           {renderSlide(V0_SLIDES[v0SlideIndex])}
-          <div className="flex justify-between mt-4">
+          <div className="flex  justify-between mt-4">
             <button
               onClick={() => setV0SlideIndex(prev => (prev > 0 ? prev - 1 : prev))}
               disabled={v0SlideIndex === 0}
